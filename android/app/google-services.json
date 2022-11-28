@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "198219726304",
+    "project_id": "scrumboardopgave",
+    "storage_bucket": "scrumboardopgave.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198219726304:android:4b8f725f01db25fd4b3f85",
+        "android_client_info": {
+          "package_name": "com.example.firstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198219726304-n8e4e5ord96fpsu0b9vn29fsgdj6i7ra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5dSkA0UidQpZpwBQvhPYPvmOpwO9-DtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "198219726304-n8e4e5ord96fpsu0b9vn29fsgdj6i7ra.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "198219726304-3rgh4tk6kqolf7pah69tg0tb696i5roh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firstapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
