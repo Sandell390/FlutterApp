@@ -1,12 +1,16 @@
 import 'package:firstapp/constants/textStyles.dart';
+import 'package:firstapp/screens/boardCreatePage.dart';
 import 'package:firstapp/screens/boards.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'postpage.dart';
 import 'screens.dart';
 import '../constants/colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
+  get board => null;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +37,26 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const CircleAvatar(
-              backgroundImage: AssetImage("assets/images/testavatar.png"),
-              radius: 60,
-            ),
+            Row(children: [
+              const CircleAvatar(
+                backgroundImage: AssetImage("assets/images/testavatar.png"),
+                radius: 60,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => boardCreatePage(),
+                    ),
+                  );
+                },
+                child: Icon(
+                  size: 40,
+                  Icons.playlist_add_outlined,
+                ),
+              ),
+            ]),
             Text("Welcome [Name]!", style: defaultText),
             const Divider(
               color: Color.fromARGB(255, 120, 120, 120),

@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '198219726304',
     projectId: 'scrumboardopgave',
     authDomain: 'scrumboardopgave.firebaseapp.com',
+    databaseURL: 'https://scrumboardopgave-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'scrumboardopgave.appspot.com',
     measurementId: 'G-RHFN02SZGH',
   );
@@ -61,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:198219726304:android:4b8f725f01db25fd4b3f85',
     messagingSenderId: '198219726304',
     projectId: 'scrumboardopgave',
+    databaseURL: 'https://scrumboardopgave-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'scrumboardopgave.appspot.com',
   );
 
@@ -69,6 +68,18 @@ class DefaultFirebaseOptions {
     appId: '1:198219726304:ios:68d14ab84dae229a4b3f85',
     messagingSenderId: '198219726304',
     projectId: 'scrumboardopgave',
+    databaseURL: 'https://scrumboardopgave-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'scrumboardopgave.appspot.com',
+    iosClientId: '198219726304-3rgh4tk6kqolf7pah69tg0tb696i5roh.apps.googleusercontent.com',
+    iosBundleId: 'com.example.firstapp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCCw3pj9hKXrTnSCccFhZhOlmb0wy2SboQ',
+    appId: '1:198219726304:ios:68d14ab84dae229a4b3f85',
+    messagingSenderId: '198219726304',
+    projectId: 'scrumboardopgave',
+    databaseURL: 'https://scrumboardopgave-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'scrumboardopgave.appspot.com',
     iosClientId: '198219726304-3rgh4tk6kqolf7pah69tg0tb696i5roh.apps.googleusercontent.com',
     iosBundleId: 'com.example.firstapp',
