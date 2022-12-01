@@ -221,7 +221,15 @@ class _PostPageState extends State<PostPage> {
                                             children: [
                                               Container(
                                                 color: Colors.green,
-                                                child: const Icon(Icons.abc),
+                                                child: CircleAvatar(
+                                                  backgroundImage:
+                                                      Image.network(columnBoard
+                                                              .posts[index]
+                                                              .creator
+                                                              .Avatar!)
+                                                          .image,
+                                                  radius: 15,
+                                                ),
                                               ),
                                               Container(
                                                 color: Colors.red,

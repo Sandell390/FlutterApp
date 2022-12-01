@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firstapp/models/ColumnBoard.dart';
 import 'package:firstapp/models/board.dart';
@@ -66,12 +67,17 @@ class _boardCreatePage extends State<boardCreatePage> {
                     done: 0,
                     left: 0);
 
+                User user = FirebaseAuth.instance.currentUser!;
+
                 final Map<String, Map> updates = {};
                 updates['/boards/$newPostKey'] = board.toJson();
                 updates['/columnboards/$newPostKey'] =
                     ColumnBoard.newBoard().toJson();
 
                 FirebaseDatabase.instance.ref().update(updates);
+                FirebaseDatabase.instance
+                    .ref("/users/${user.uid}/boards/$newPostKey")
+                    .set(true);
               },
               child: Text("Create"))
         ],

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart' as fba;
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firstapp/models/ColumnBoard.dart';
 import 'package:flutter/material.dart';
@@ -47,11 +48,14 @@ class NewPostDialog extends StatelessWidget {
           actions: [
             TextButton(
                 onPressed: () {
+                  fba.User user = fba.FirebaseAuth.instance.currentUser!;
+
                   Post newpost = Post(
                       columnName: columnBoard.columns[index],
                       title: titleValue.text,
                       description: descriptionValue.text,
-                      creator: User(Username: "hej", Avatar: "asd"));
+                      creator: User(
+                          Username: user.displayName, Avatar: user.photoURL));
                   columnBoard.posts.add(newpost);
                   final Map<String, List<Map>> updates = {};
                   updates['columnboards/$boardKey/posts'] =
