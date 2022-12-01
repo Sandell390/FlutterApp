@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firstapp/auth_service.dart';
 import 'package:firstapp/constants/textStyles.dart';
 import 'package:firstapp/screens/boardCreatePage.dart';
 import 'package:firstapp/screens/boards.dart';
@@ -24,7 +26,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              print("object");
+              AuthService().signOut();
             },
             icon: const Icon(Icons.notifications),
           ),
@@ -38,8 +40,10 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Row(children: [
-              const CircleAvatar(
-                backgroundImage: AssetImage("assets/images/testavatar.png"),
+              CircleAvatar(
+                backgroundImage:
+                    Image.network(FirebaseAuth.instance.currentUser!.photoURL!)
+                        .image,
                 radius: 60,
               ),
               TextButton(
@@ -57,7 +61,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ]),
-            Text("Welcome [Name]!", style: defaultText),
+            Text("Welcome ${FirebaseAuth.instance.currentUser!.displayName!}",
+                style: defaultText),
             const Divider(
               color: Color.fromARGB(255, 120, 120, 120),
               height: 2,

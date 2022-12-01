@@ -1,3 +1,4 @@
+import 'package:firstapp/auth_service.dart';
 import 'package:firstapp/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         systemNavigationBarIconBrightness: Brightness.light));
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Kanban Board',
-      home: HomePage(),
+      home: AuthService().handleAuthState(),
     );
   }
 }

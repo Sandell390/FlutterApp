@@ -11,12 +11,16 @@ class ColumnBoard {
 
   ColumnBoard.fromJson(Map<String, dynamic> json) {
     columns = List<String>.from(json["columns"].map((e) => e.toString()));
-    print(json['posts']);
-    //Map<String, dynamic> map = json.d
-    List<dynamic> list = json['posts'] as List<dynamic>;
-    print(list);
-    posts = parsePosts(list);
-    print(posts);
+    if (json['posts'] == null) {
+      posts = <Post>[];
+    } else {
+      print(json['posts']);
+      //Map<String, dynamic> map = json.d
+      List<dynamic> list = json['posts'] as List<dynamic>;
+      print(list);
+      posts = parsePosts(list);
+      print(posts);
+    }
   }
 
   List<Post> parsePosts(List response) {
@@ -32,13 +36,7 @@ class ColumnBoard {
 
   ColumnBoard.newBoard() {
     columns = ["Todo", "Working on", "Done", "Quality Control", "Backlog"];
-    posts = [
-      Post(
-          columnName: "Todo",
-          creator: User(Avatar: "123", Username: "123"),
-          description: "Nigger",
-          title: "Big nigger")
-    ];
+    posts = [];
   }
 
   static List<ColumnBoard> generateColumn() {

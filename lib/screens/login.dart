@@ -1,12 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firstapp/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -37,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
               margin: const EdgeInsets.only(bottom: 5),
               child: ElevatedButton(
                 onPressed: () {
-                  print("Logggin...");
+                  AuthService().signInWithGoogle();
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
