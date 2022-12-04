@@ -74,6 +74,7 @@ class Boards extends StatelessWidget {
     return StreamBuilder(
         stream: FirebaseDatabase.instance.ref("boards/$boardID").onValue,
         builder: (context, snapshot) {
+          if (!snapshot.hasData) return Text("Loading");
           print(snapshot.data!.snapshot.value);
           Map<String, dynamic> map = {};
           snapshot.data!.snapshot.children.forEach(

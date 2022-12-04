@@ -4,23 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class RemoePostDialog extends StatelessWidget {
+class RemoePostDialog {
   RemoePostDialog(
-      {super.key,
-      required this.columnBoard,
-      required this.index,
-      required this.boardKey});
+      {required this.columnBoard, required this.index, required this.boardKey});
 
   ColumnBoard columnBoard;
   int index;
   String boardKey;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-
   PostDialog(BuildContext context) {
+    print("hej");
     showDialog(
       barrierDismissible: false,
       context: context,

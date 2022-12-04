@@ -70,6 +70,7 @@ class DefaultFirebaseOptions {
     projectId: 'scrumboardopgave',
     databaseURL: 'https://scrumboardopgave-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'scrumboardopgave.appspot.com',
+    androidClientId: '198219726304-9erlbhd4mvudojtpnks47ud77crshr5f.apps.googleusercontent.com',
     iosClientId: '198219726304-3rgh4tk6kqolf7pah69tg0tb696i5roh.apps.googleusercontent.com',
     iosBundleId: 'com.example.firstapp',
   );
@@ -81,6 +82,7 @@ class DefaultFirebaseOptions {
     projectId: 'scrumboardopgave',
     databaseURL: 'https://scrumboardopgave-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'scrumboardopgave.appspot.com',
+    androidClientId: '198219726304-9erlbhd4mvudojtpnks47ud77crshr5f.apps.googleusercontent.com',
     iosClientId: '198219726304-3rgh4tk6kqolf7pah69tg0tb696i5roh.apps.googleusercontent.com',
     iosBundleId: 'com.example.firstapp',
   );
